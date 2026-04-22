@@ -1,0 +1,31 @@
+@app.route('/')
+def home():
+    return render_template_string("""
+    <html>
+    <head>
+    <title>FarmAssist</title>
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+    <body>
+
+    <header>🌱 FarmAssist</header>
+
+    <div class="container">
+        <h1>Welcome to FarmAssist</h1>
+        <p>Select a tool to help your farming.</p>
+
+        <div class="grid">
+            <a href="/crop" class="card blue">🌾 Crop Recommendation</a>
+            <a href="/fertilizer" class="card yellow">🧪 Fertilizer Guide</a>
+            <a href="/ph" class="card cyan">💧 pH Check</a>
+            <a href="/disease" class="card red">🦠 Disease Check</a>
+            <a href="/camera" class="card dark">📷 Camera Analysis</a>
+        </div>
+    </div>
+
+    </body>
+    </html>
+    """)
